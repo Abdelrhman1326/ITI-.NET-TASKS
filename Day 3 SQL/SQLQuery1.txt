@@ -1,0 +1,165 @@
+/* For each project, list the project name and the total hours per week (for all employees) spent on
+that project.P */
+SELECT p.Pname AS ProjectName, SUM(w.Hours) AS TotalHours
+FROM Project AS p
+JOIN Works_for AS w
+    ON p.Pnumber = w.Pno
+JOIN Employee AS e
+    ON e.SSN = w.ESSN
+GROUP BY p.Pname;
+
+
+-- Display the data of the department which has the smallest employee ID over all employees' ID.
+SELECT d.*
+FROM dbo.Departments AS d
+JOIN dbo.Employee AS e
+    ON d.Dnum = e.Dno
+WHERE e.SSN = (SELECT MIN(SSN) FROM dbo.Employee);
+
+
+/* For each department, retrieve the department name and the maximum, minimum and average
+salary of its employees. */
+SELECT d.Dname AS DepartmentName
+, MAX(e.Salary) AS MaximumSalary, MIN(e.Salary) AS MinimumSalary, AVG(e.Salary) AS AverageSalary
+FROM dbo.Departments AS d
+JOIN dbo.Employee AS e
+ON d.Dnum = e.Dno
+GROUP BY d.Dname;
+
+
+-- List the full name of all managers who have no dependents.
+SELECT e.Fname + ' ' + e.Lname AS ManagerName
+FROM dbo.Employee AS e
+JOIN dbo.Departments AS d
+    ON e.SSN = d.MgrSSN
+WHERE e.SSN NOT IN (
+    SELECT dep.ESSN
+    FROM dbo.Dependent AS dep
+);
+
+
+/* For each department-- if its average salary is less than the average salary of all employees--
+display its number, name and number of its employees. */
+SELECT d.Dnum AS DepartmentNumber,
+       d.Dname AS DepartmentName,
+       COUNT(*) AS EmployeesCount
+FROM dbo.Departments AS d
+JOIN dbo.Employee AS e
+    ON d.Dnum = e.Dno
+GROUP BY d.Dnum, d.Dname
+HAVING AVG(e.Salary) < (SELECT AVG(Salary) FROM dbo.Employee);
+
+
+/* Retrieve a list of employee’s names and the projects names they are working on ordered by
+department number and within each department, ordered alphabetically by last name, first name. */
+SELECT e.Fname + ' ' + e.Lname AS FullName, p.Pname AS ProjectName
+FROM dbo.Employee AS e
+JOIN dbo.Works_for AS w ON e.SSN = w.ESSN
+JOIN dbo.Project AS p ON w.Pno = p.Pnumber
+JOIN dbo.Departments as d ON p.Dnum=d.Dnum
+ORDER BY p.Dnum ASC, e.Lname ASC, e.Fname ASC;
+
+
+/* In the department table insert new department called "DEPT IT”, with id 100, employee with
+SSN = 112233 as a manager for this department. The start date for this manager is '1-11-2006' */
+INSERT INTO dbo.Departments (Dnum, Dname, MgrSSN, [MGRStart Date])
+VALUES (100, 'DEPT IT', 112233, '2006-11-01');
+
+
+-- a
+UPDATE dbo.Departments
+SET MgrSSN = 968574
+WHERE Dnum = 100;
+-- b
+UPDATE dbo.Departments
+SET MgrSSN = 102672
+WHERE Dnum = 20;
+-- c
+UPDATE dbo.Employee
+SET SuperSSN = 102672
+WHERE SSN = 102660;
+
+
+-- Display the department number, department name, and the manager’s SSN, first name, and last name.
+SELECT d.Dnum AS DepartmentNumber,
+       d.Dname   AS DepartmentName,
+       e.SSN     AS ManagerSSN,
+       e.Fname   AS ManagerFirstName,
+       e.Lname   AS ManagerLastName
+FROM dbo.Departments AS d
+JOIN dbo.Employee AS e
+    ON d.MgrSSN = e.SSN;
+
+SELECT d.Dname AS DepartmentName,
+       p.Pname AS ProjectName
+FROM dbo.Departments AS d
+JOIN dbo.Project AS p
+    ON d.Dnum = p.Dnum
+ORDER BY d.Dname, p.Pname;
+
+
+-- Display all dependent information with the full name of the related employee.
+SELECT dep.*,
+       e.Fname + ' ' + e.Lname AS EmployeeFullName
+FROM dbo.Dependent AS dep
+JOIN dbo.Employee AS e
+    ON dep.ESSN = e.SSN;
+
+
+-- Display the project number, project name, and location for projects located in Cairo or Alex.
+SELECT *
+FROM dbo.Project AS p
+WHERE LOWER(p.Plocation) LIKE 'cairo%' OR LOWER(p.Plocation) LIKE 'alex%';
+
+
+-- Display all projects whose names start with the letter A.
+SELECT * FROM dbo.Project AS p WHERE LOWER(p.Pname) LIKE 'a%';
+
+
+-- Display all employees who work in department 30 and whose salary is between 1000 and 2000.
+SELECT *
+FROM dbo.Employee AS e
+WHERE e.Dno=30 AND e.Salary >= 1000 AND e.Salary <= 2000;
+
+
+/* Display the first names of employees in department 10 who worked 10 hours or more 
+   on the project named Al Rabwah. */
+SELECT e.Fname AS FirstName
+FROM dbo.Employee AS e
+JOIN Works_for AS w ON e.SSN = w.ESSn
+JOIN Project AS p ON w.Pno = p.Pnumber
+WHERE e.Dno = 10
+  AND w.Hours >= 10
+  AND LOWER(p.Pname) = LOWER('Al Rabwah');
+
+
+-- Display the first names of employees who are supervised by an employee named Kamel.
+SELECT e.Fname AS FirstName
+FROM dbo.Employee AS e
+INNER JOIN dbo.Employee AS s
+    ON e.Superssn = s.SSN
+WHERE LOWER(s.Fname) = LOWER('Kamel');
+
+
+-- Display employees’ first names along with the project names they work on, ordered by project name
+SELECT e.Fname AS FirstName,
+       p.Pname  AS ProjectName
+FROM dbo.Employee AS e
+JOIN dbo.Works_for AS w 
+    ON e.SSN = w.ESSN
+JOIN dbo.Project AS p 
+    ON w.Pno = p.Pnumber
+ORDER BY p.Pname ASC;
+
+
+-- Display project info with department and manager details
+SELECT p.Pnumber AS ProjectNumber,
+       p.Pname   AS ProjectName,
+       d.Dname   AS DepartmentName,
+       m.Lname   AS ManagerLastName,
+       m.Address AS ManagerAddress
+FROM dbo.Project AS p
+JOIN dbo.Departments AS d 
+    ON p.Dnum = d.Dnum
+JOIN dbo.Employee AS m
+    ON d.MGRSSN = m.SSN;
