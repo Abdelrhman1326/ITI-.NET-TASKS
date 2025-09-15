@@ -1,4 +1,4 @@
-namespace Program
+﻿namespace Program
 {
     internal class Program
     {
@@ -62,6 +62,7 @@ namespace Program
 
         public class Student : Person
         {
+            public List<int> Grades = new List<int>();
             public Student(string name, int age) : base(name, age) { }
             public List<Course> CoursesEnrolled { get; } = new List<Course>();
 
@@ -75,8 +76,35 @@ namespace Program
             {
                 Console.WriteLine($"Hello, i am a Student, and my name is {this.Name}.");
             }
-        }
 
+            public int TotalMark()
+            {
+                return Grades.Sum();
+            }
+
+            public List<int> getMarks()
+            {
+                return Grades;
+            }
+
+            public static bool operator ==(Student student, int grade)
+            {
+                if (ReferenceEquals(student, null))
+                {
+                    return false;
+                }
+                return student.TotalMark() == grade;
+            }
+
+            public static bool operator !=(Student student, int grade)
+            {
+                if (ReferenceEquals(student, null))
+                {
+                    return true;
+                }
+                return !(student == grade);
+            }
+        }
         public class Department
         {
             public string Name { get; set; }
@@ -123,7 +151,13 @@ namespace Program
             student1.RegisterCourse(designCourse);
             student2.RegisterCourse(marketingCourse);
 
-            // Loop and print the required information
+            // Assign grades to a student
+            student1.Grades.Add(10);
+            student1.Grades.Add(10);
+            student2.Grades.Add(15);
+            student2.Grades.Add(15);
+
+
             Console.WriteLine($"Company Name: {myCompany.Name}\n");
 
             foreach (var department in myCompany.Departments)
@@ -131,15 +165,12 @@ namespace Program
                 Console.WriteLine($"--- Department: {department.Name} ---");
                 foreach (var person in department.Employees)
                 {
-                    // Call the polymorphic Introduce() method
                     person.Introduce();
 
-                    // Check if the person is a Student
                     if (person is Student student)
                     {
                         Console.WriteLine($"Courses Enrolled: {string.Join(", ", student.CoursesEnrolled.Select(c => c.Name))}");
                     }
-                    // Check if the person is an Instructor
                     else if (person is Instructor instructor)
                     {
                         Console.WriteLine($"Courses Teaching: {string.Join(", ", instructor.CoursesTeaching.Select(c => c.Name))}");
@@ -147,7 +178,23 @@ namespace Program
                 }
                 Console.WriteLine();
             }
+
+            List<int> marks = student1.getMarks();
+            Console.WriteLine($"\n{student1.Name}'s Marks: {string.Join(", ", marks)}");
+            Console.WriteLine($"\n{student2.Name}'s Marks: {string.Join(", ", student2.getMarks())}");
+
+
+            // Check if total == 20:
+            if (student1 == 20)
+            {
+                Console.WriteLine($"\nTotal mark for {student1.Name} is 20.");
+            }
+
+            // Check if total != 20:
+            if (student1 != 21)
+            {
+                Console.WriteLine($"Total mark for {student1.Name} is not 21.");
+            }
         }
     }
-
 }
