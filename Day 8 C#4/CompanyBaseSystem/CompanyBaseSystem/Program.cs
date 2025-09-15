@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-
 namespace Program
 {
     internal class Program
@@ -152,4 +149,5 @@ namespace Program
             }
         }
     }
+
 }
