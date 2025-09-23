@@ -102,6 +102,7 @@ namespace project
                 }
             };
 
+            // Query1: Display Full name and number of subjects for each student
             var studentInfo = students.Select(student => new
             {
                 FullName = $"{student.FirstName} {student.LastName}",
@@ -111,6 +112,24 @@ namespace project
             foreach (var info in studentInfo)
             {
                 Console.WriteLine($"( FullName = {info.FullName}, NumberOfSubjects = {info.SubjectCount} )");
+            }
+            Console.WriteLine();
+
+            // Query2: Write a query which orders the elements in the list by FirstName
+            // Descending then by LastName Ascending and result of query displays only first
+            // names and last names for the elements in list
+            var sortedStudents = students
+                .OrderByDescending(student => student.FirstName)
+                .ThenBy(student => student.LastName)
+                .Select(student => new
+                {
+                    student.FirstName,
+                    student.LastName
+                });
+
+            foreach (var student in sortedStudents)
+            {
+                Console.WriteLine(student.FirstName + ' ' + student.LastName);
             }
             Console.WriteLine();
 
