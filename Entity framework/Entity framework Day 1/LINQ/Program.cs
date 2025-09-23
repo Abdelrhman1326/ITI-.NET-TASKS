@@ -27,8 +27,9 @@ namespace project
             }
             foreach (var pair in PowOfTwo)
             {
-                Console.WriteLine($"( Number = {pair.Key}, Multiply = {pair.Value} )" + '\n');
+                Console.WriteLine($"( Number = {pair.Key}, Multiply = {pair.Value} )");
             }
+            Console.WriteLine();
             #endregion
 
             #region 
@@ -40,6 +41,13 @@ namespace project
             var namesOfLengthThree = names.Where(name => name.Length == 3);
             string result1 = string.Join(", ", namesOfLengthThree);
             Console.WriteLine(result1 + '\n');
+
+
+            // Query2: Select names that contains “a” letter (Capital or Small) then sort them
+            // by length (Use toLower method and Contains method)
+            var namesStartingWithA = names.Where(name => name.ToLower().Contains('a'));
+            string result2 = string.Join(", ", namesStartingWithA);
+            Console.WriteLine(result2 + '\n');
 
             #endregion
         }
