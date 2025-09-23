@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Day 5 C#1\\OddVSEven\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D7718FA6-0555-461F-B56A-F7A18975F962}|OddVSEven\\OddVSEven.csproj|d:\\abdelrhman\\studying\\courses\\iti .net\\day 5 c#1\\oddvseven\\oddvseven\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7718FA6-0555-461F-B56A-F7A18975F962}|OddVSEven\\OddVSEven.csproj|solutionrelative:oddvseven\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Day 5 C#1\\OddVSEven\\OddVSEven\\Program.cs",
+              "RelativeDocumentMoniker": "OddVSEven\\Program.cs",
+              "ToolTip": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Day 5 C#1\\OddVSEven\\OddVSEven\\Program.cs",
+              "RelativeToolTip": "OddVSEven\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:29:04.109Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
