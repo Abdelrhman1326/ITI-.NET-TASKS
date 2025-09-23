@@ -106,7 +106,7 @@ namespace project
             var studentInfo = students.Select(student => new
             {
                 FullName = $"{student.FirstName} {student.LastName}",
-                SubjectCount = student.Subjects?.Length ?? 0 // 0 if Subjects is null array
+                SubjectCount = student.Subjects?.Length ?? 0
             });
 
             foreach (var info in studentInfo)
@@ -131,6 +131,58 @@ namespace project
             {
                 Console.WriteLine(student.FirstName + ' ' + student.LastName);
             }
+            Console.WriteLine();
+
+            // Query3: Display each student and student’s subject as follow (use selectMany)
+            var studentsAndSubjects = students.SelectMany(student =>
+            student.Subjects,
+            (student, subject) => new
+            {
+                StudentName = student.FirstName,
+                SubjectName = subject.Name
+            });
+
+            foreach (var item in studentsAndSubjects)
+            {
+                Console.WriteLine($"Student: {item.StudentName}, Subject: {item.SubjectName}");
+            }
+            Console.WriteLine();
+
+            // BONUS: Group students by ID and display their full names
+            var studentsByIdGrouped = students.GroupBy(s => s.ID);
+
+            Console.WriteLine("Students grouped by ID:");
+            foreach (var group in studentsByIdGrouped)
+            {
+                Console.WriteLine($"ID {group.Key}:");
+                foreach (var student in group)
+                {
+                    Console.WriteLine($"  - {student.FirstName} {student.LastName}");
+                }
+            }
+            Console.WriteLine();
+
+            //-------------------------------------------------------------------------
+
+            // Query4: Find students with ID equal to 1 and FirstName equal to “Ali”
+            var studentsByIdAndName = students
+                .Where(student => student.ID == 1 && student.FirstName == "Ali")
+                .Select(student => student.FirstName + " " + student.LastName);
+
+            Console.WriteLine("Students with ID 1 and First Name 'Ali':");
+            foreach (var name in studentsByIdAndName)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
+
+            // Query5: Find the student with the highest number of subjects
+            var studentWithMostSubjects = students
+                .OrderByDescending(s => s.Subjects?.Length ?? 0)
+                .Select(s => $"{s.FirstName} {s.LastName}")
+                .FirstOrDefault();
+
+            Console.WriteLine($"Student with the most subjects: {studentWithMostSubjects}");
             Console.WriteLine();
 
             #endregion
