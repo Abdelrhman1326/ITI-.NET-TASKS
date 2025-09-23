@@ -49,6 +49,13 @@ namespace project
             string result2 = string.Join(", ", namesStartingWithA);
             Console.WriteLine(result2 + '\n');
 
+
+
+            // Query3: Display the first 2 names
+            var firstTwoNames = names.Take(2);
+            string result3 = string.Join(", ", firstTwoNames);
+            Console.WriteLine(result3 + '\n');
+
             #endregion
         }
     }
