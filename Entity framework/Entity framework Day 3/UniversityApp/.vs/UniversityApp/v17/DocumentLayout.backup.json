@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|d:\\abdelrhman\\studying\\courses\\iti .net\\entity framework\\entity framework day 3\\universityapp\\universityapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|solutionrelative:universityapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|d:\\abdelrhman\\studying\\courses\\iti .net\\entity framework\\entity framework day 3\\universityapp\\universityapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|solutionrelative:universityapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|d:\\abdelrhman\\studying\\courses\\iti .net\\entity framework\\entity framework day 3\\universityapp\\universityapp\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|solutionrelative:universityapp\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|d:\\abdelrhman\\studying\\courses\\iti .net\\entity framework\\entity framework day 3\\universityapp\\universityapp\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E0D1DC6-2697-442D-8F59-152A335D7485}|UniversityApp\\UniversityApp.csproj|solutionrelative:universityapp\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "UniversityApp\\Models\\Course.cs",
+              "ToolTip": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Models\\Course.cs",
+              "RelativeToolTip": "UniversityApp\\Models\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:38:32.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Instructor.cs",
+              "DocumentMoniker": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Models\\Instructor.cs",
+              "RelativeDocumentMoniker": "UniversityApp\\Models\\Instructor.cs",
+              "ToolTip": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Models\\Instructor.cs",
+              "RelativeToolTip": "UniversityApp\\Models\\Instructor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:36:56.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Form1.cs",
+              "RelativeDocumentMoniker": "UniversityApp\\Form1.cs",
+              "ToolTip": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Form1.cs [Design]",
+              "RelativeToolTip": "UniversityApp\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:35:49.813Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Form1.cs",
+              "RelativeDocumentMoniker": "UniversityApp\\Form1.cs",
+              "ToolTip": "D:\\AbdElrhman\\Studying\\Courses\\ITI .NET\\Entity framework\\Entity framework Day 3\\UniversityApp\\UniversityApp\\Form1.cs",
+              "RelativeToolTip": "UniversityApp\\Form1.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAjwJAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T14:32:27.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
